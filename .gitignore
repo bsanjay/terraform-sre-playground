@@ -1,0 +1,17 @@
+# Terraform
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+crash.log
+
+# Variable files
+*.auto.tfvars
+terraform.tfvars
+
+# IDE
+.vscode/
+.idea/
+
+# Linux
+.DS_Store
