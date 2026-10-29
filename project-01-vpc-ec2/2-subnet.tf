@@ -1,0 +1,23 @@
+#Public/Private Subnets
+resource "aws_subnet" "terra-public-subnet-1" {
+  vpc_id                  = aws_vpc.terra-vpc.id
+  cidr_block              = "10.0.1.0/24"
+  map_public_ip_on_launch = true
+  availability_zone       = "${var.AWS_REGION}a"
+
+  tags = {
+    Name = "terra-public-subnet-1"
+  }
+}
+resource "aws_subnet" "terra-private-subnet-1" {
+  vpc_id                  = aws_vpc.terra-vpc.id
+  cidr_block              = "10.0.2.0/24"
+  map_public_ip_on_launch = false
+  availability_zone       = "${var.AWS_REGION}a"
+
+  tags = {
+    Name = "terra-private-subnet-1"
+  }
+}
+
+
