@@ -18,3 +18,10 @@ VPC + EC2 + Prometheus using provisioners
 - GitHub Actions
 - ALB
 - Auto Scaling Groups
+
+
+#NOTE:
+Create aws-key before running terraform
+ssh-keygen -t rsa -b 4096 -f aws-key
+OR
+ssh-keygen -t ed25519 -f aws-key  (Recommended)
