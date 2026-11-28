@@ -1,0 +1,7 @@
+# Clean existin k8s cluster
+sudo kubeadm reset -f
+
+sudo rm -rf /etc/kubernetes
+sudo rm -rf /var/lib/etcd
+sudo rm -rf /etc/cni/net.d
+sudo rm -f /tmp/kubeadm_join_cmd.sh

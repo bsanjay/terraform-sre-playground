@@ -1,0 +1,21 @@
+---
+- hosts: k8s
+  become: yes
+
+  roles:
+    - common
+    - containerd
+    - kubernetes
+
+- hosts: master
+  become: yes
+
+  roles:
+    - master
+
+- hosts: workers
+  become: yes
+
+  roles:
+    - worker
+

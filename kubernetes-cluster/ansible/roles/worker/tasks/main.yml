@@ -1,0 +1,11 @@
+---
+- name: Read join command from master
+  slurp:
+    src: /tmp/kubeadm_join_cmd.sh
+  register: join_cmd
+  delegate_to: "{{ groups['master'][0] }}"
+
+- name: Join node to cluster
+  shell: "{{ join_cmd.content | b64decode }}"
+  args:
+    creates: /etc/kubernetes/kubelet.conf
